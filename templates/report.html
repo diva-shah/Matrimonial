@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Report
+{% endblock %}
+
+{% block main %}
+    <form action="/report/{{username}}" method="post">
+        <h4 align="left">Why are you reporting {{ username }}?</h4>
+        {% for reason in reasons %}
+            <div align="left">
+                <input type="checkbox" name="{{reason}}" id="{{reason}}">
+                <label for="{{reason}}">{{reason}}</label>
+            </div>
+        {% endfor %}
+        <h4 align="left">Explain</h4>
+        <textarea placeholder="Explanation" class="form-control" name="explanation" required autocomplete="off"></textarea>
+        <button class="btn btn-primary">Report</button>
+    </form>
+{% endblock %}

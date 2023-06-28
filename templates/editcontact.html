@@ -1,0 +1,58 @@
+{% extends "shared/editlayout.html" %} {% block title %} Edit Contact {% endblock %} {% block edit %}
+
+        <div class="col-9">
+<div class="container-fluid">
+    <h1>Edit your Contact</h1>
+    <form action = "/edittingcontact" method = "post">
+        <h2>Contact</h2>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <h5>First Name</h5>
+                        <input class="form-control" type="text" autofocus name="firstname" value="{{contact[0]['firstName']}}" placeholder="First Name" autocomplete = "off">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <h5>Last Name</h5>
+                        <input class="form-control" type="text" name="lastname" value="{{contact[0]['lastName']}}" placeholder="Last Name" autocomplete = "off">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h5>Address</h5>
+                    <input class="form-control" type="text" name="address" value="{{contact[0]['address']}}" placeholder="Address" autocomplete = "off">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <select name="country" class="form-control countries order-alpha group-order-alpha" id="countryId" autocomplete = "off">
+                    <option value="">Select Country</option>
+                </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select name="state" class="states form-control" id="stateId" autocomplete = "off">
+                    <option value="">Select State</option>
+                </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select name="city" class="cities form-control" id="cityId" autocomplete = "off">
+                    <option value="">Select City</option>
+                </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h5>Zip Code/ Postal Code</h5>
+                    <input class="form-control" name="zip" type="text" value="{{contact[0]['zipcode']}}" placeholder="Zipcode/ Postal Code" autocomplete = "off">
+                </div>
+                <div class="form-group">
+                    <h5>Date of Birth</h5>
+                    <input class="form-control" name="dob" type="text" onfocus="(this.type='date')" value="{{contact[0]['dob']}}" placeholder="Date of Birth" autocomplete = "off">
+                </div>
+                <div class="form-group" align="left">
+                    <button class="btn btn-primary" type="submit">Update</button>
+                </div>
+
+    </form>
+</div>
+
+{% endblock %}

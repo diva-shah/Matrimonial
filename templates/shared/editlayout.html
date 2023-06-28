@@ -1,0 +1,46 @@
+{% extends "layout.html" %} {% block title %} Preference {% endblock %} {% block main %}
+        <div class="container-fluid">
+            <div class="row">
+               <div class="col-3 menu">
+                   <div>
+                       <a href="#">
+                           <img src="/static/images/imageimage.JPG" />
+                       </a>
+                   </div>
+                   <p></p>
+                   <ul>
+                       <a href="/aesthetics"><li>Preferences</li></a>
+                   </ul>
+                   <div style="background-color: #d6d5d5; color: #33b5e5"><b>Edit My Profile</b></div>
+                   <ul>
+                       <a href="/edittingprofile"><li>Edit Profile</li></a>
+                       <a href="/edittingpreferences"><li>Edit Partner Preference</li></a>
+                       <a href="/edittingcontact"><li>Edit Contact</li></a>
+                   </ul>
+                   <div style=" background-color: #d6d5d5; color: #33b5e5"><b>Photos</b></div>
+                   <ul>
+                       <a href="/editphotos"><li>Edit Photos</li></a>
+                       <a href="/photoaccess"><li>Photo Access</li></a>
+                   </ul>
+                   <div style="background-color: #d6d5d5; color: #33b5e5"><b>Account & Security</b></div>
+                   <ul>
+                       <a href="/editusername"><li>Change Username</li></a>
+                       <a href="/change"><li>Change Password</li></a>
+                       <a href="/editemail"><li>Change Email</li></a>
+                       <a href = "/memborshiphistory"><li>Memborship History</li></a>
+                       <a href = "/blockedusers"><li>Blocked Users</li></a>
+                       <!--<a href="membershipHistory"><li>Membership History</li></a>-->
+                       <!--<a href="blockedUsers"><li>Blocked Users</li></a>-->
+                   </ul>
+                   <ul>
+                        <a href="/deleteprofile">
+                            <li style="background-color: #000000; color: red; padding: 15px">Delete Profile</li>
+                        </a>
+                   </ul>
+               </div>
+
+                 {% block edit %} {% endblock %}
+            </div>
+        </div>
+
+{% endblock %}

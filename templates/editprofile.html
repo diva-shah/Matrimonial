@@ -1,0 +1,63 @@
+{% extends "shared/editlayout.html" %} {% block title %} Edit Profile {% endblock %} {% block main %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 menu">
+            <div>
+                <a href="#">
+                 <img src="/static/images/imageimage.JPG"  />
+                 </a>
+            </div>
+            <p></p>
+            <div style=" background-color: #d6d5d5; color: #33b5e5"><b>Edit My Profile</b></div>
+            <ul>
+                <a href="/edittingprofile">
+                    <li>Edit profile</li>
+                </a>
+                <a href="/edittingpreferences">
+                    <li>Edit preferences</li>
+                </a>
+                <a href="/edittingcontact">
+                    <li>Edit contact</li>
+                </a>
+                <a href="/aesthetics">
+                    <li>Aesthetics</li>
+                </a>
+
+            </ul>
+            <div style=" background-color: #d6d5d5; color: #33b5e5"><b>Photos</b></div>
+            <ul>
+                <a href = "/editphotos">
+                    <li>Edit Photos</li>
+                </a>
+                <a href = "/photoaccess">
+                    <li>Photo Access</li>
+                </a>
+
+            </ul>
+            <div style=" background-color: #d6d5d5; color: #33b5e5"><b>Account & Security</b></div>
+            <ul>
+                <a href = "/editusername">
+                    <li>Change Username</li>
+                </a>
+                <a href = "/change">
+                    <li>Change Password</li>
+                </a>
+                <a href="/editemail"><li>Change Email</li></a>
+                <a href = "/memborshiphistory"><li>Memborship History</li></a>
+                <a href = "/blockedusers"><li>Blocked Users</li></a>
+                <a href = "/communications"><li>Communications</li></a>
+            </ul>
+            <ul>
+                <a href="/deleteprofile">
+                    <li style="background-color: #000000; color: red">Delete Profile</li>
+                </a>
+
+            </ul>
+            </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

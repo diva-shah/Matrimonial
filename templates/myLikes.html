@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   My Likes
+{% endblock %}
+
+{% block main %}
+    <div style="margin-top:50px;">
+        <ul class="nav nav-tabs nav-justified mb-3" id="likedOrNot" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="youLiked-tab" data-toggle="tab" href="#youLiked" role="tab" aria-controls="youLiked" aria-selected="true">My Liked Profiles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="others-tab" data-toggle="tab" href="#peopleWhoLikedMe" role="tab" aria-controls="others" aria-selected="false">People Who Liked Me</a>
+          </li>
+        </ul>
+    </div>
+
+    <div class="tab-content" id="likedOrNotContent">
+        <div class="tab-pane fade show active" id="youLiked" role="tabpanel" aria-labelledby="youLiked-tab">
+                <h1>My Likes</h1>
+                {% if length == 0 %}
+                    <h4 style="text-indent: 5px;">You have not liked a profile yet!</h4>
+                {% else %}
+                        <h3>You have liked {{ length }} profile(s)</h3>
+                        <div class="row pro">
+                            {% for user in range(length) %}
+                                {% if iliked[user][0]['gender'] == 'M' %}
+                                   <div class="col-sm-4 col-lg-3 mb-4">
+                                    <div class="profile-list profile-grid">
+                                        <div class="profile-list-image">
+                                            <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+                                        </div>
+                                        <a href= "{{ url_for('userProfile', username = liked[user]['toUser']) }}">
+                                            <h4>{{ liked[user]['toUser'] }} {{age[user]}}</h4>
+                                        </a>
+                                        <h6>{{ iliked[user][0]['state'] }}, {{ iliked[user][0]['country'] }}</h6>
+                                    </div>
+                                    </div>
+                                {% elif iliked[user][0]['gender'] == 'F' %}
+                                    <div class="col-sm-4 col-lg-3 mb-4">
+                                        <div class="profile-list profile-grid">
+                                            <div class="profile-list-image">
+                                                <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                                            </div>
+                                            <a href= "{{ url_for('userProfile', username = liked[user]['toUser']) }}">
+                                                <h4>{{ liked[user]['toUser'] }} {{age[user]}}</h4>
+                                            </a>
+                                            <h6>{{ iliked[user][0]['state'] }}, {{ iliked[user][0]['country'] }}</h6>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+
+                {% endif %}
+        </div>
+        <div class="tab-pane fade" id="peopleWhoLikedMe" role="tabpanel" aria-labelledby="peopleWhoLikedYou-tab">
+            <h1>Profiles that like me</h1>
+            {% if length2 == 0 %}
+            <h4>Nobody has liked your profile!</h4>
+            {% else %}
+                <h3>{{ length2 }} profile(s) has/have liked you!</h3>
+                <div class = "row pro">
+                    {% for user in range(length2) %}
+                        {% if othersLiked[user][0]['gender'] == 'M' %}
+                            <div class="col-sm-4 col-lg-3 mb-4">
+                                <div class="profile-list profile-grid">
+                                    <div class="profile-list-image">
+                                        <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+                                    </div>
+                                    <a href= "{{ url_for('userProfile', username = likedMe[user]['fromMe']) }}">
+                                        <h4>{{ othersLiked[user][0]['username'] }} {{ageOfOthers[user]}}</h4>
+                                    </a>
+                                    <h6>{{ othersLiked[user][0]['state'] }}, {{ othersLiked[user][0]['country'] }}</h6>
+                                </div>
+                            </div>
+                        {% elif othersLiked[user][0]['gender'] == 'F' %}
+                            <div class="col-sm-4 col-lg-3 mb-4">
+                                <div class="profile-list profile-grid">
+                                    <div class="profile-list-image">
+                                        <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                                    </div>
+                                    <a href= "{{ url_for('userProfile', username = likedMe[user]['fromMe']) }}">
+                                        <h4>{{ othersLiked[user][0]['username'] }} {{ageOfOthers[user]}}</h4>
+                                    </a>
+                                    <h6>{{ othersLiked[user][0]['state'] }}, {{ othersLiked[user][0]['country'] }}</h6>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "shared/editlayout.html" %} {% block title %} View of your Profile {% endblock %} {% block edit %}
+<div class="col-9">
+    <div class="container-fluid">
+        <h1>Preferences</h1>
+        <form action="/aesthetics" method="post">
+            <table style="width:100%">
+                <tr>
+                    <th>Profile Status</th>
+                    {% for x in range(4) %}
+                    <td></td>
+                    {% endfor %}
+                    <td>
+                        <div class="form-group">
+                            <select name="profileStatus">
+                                            <option selected disabled value="">Profile Status</option>
+                                            <option name = "Live" value = "Live">Live</option>
+                                            <option name = "Hidden" value = "Hidden">Hidden</option>
+                                        </select>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <table>
+                <tr>
+                    <th>Show Picture Guidelines</th>
+                    {% for x in range(149) %}
+                    <td></td>
+                    {% endfor %}
+                    <td>
+                        <div class="form-group">
+                            <select name="showPG">
+                                        <option selected disabled value="">Show Picture Guidelines</option>
+                                        <option name = "Show" value = "Show">Show</option>
+                                        <option name = "Hide" value = "Hide">Hide</option>
+                                    </select>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <hr>
+
+            <table>
+                <tr>
+                    <th>Messaging</th>
+                    {% for x in range(200) %}
+                    <td></td>
+                    {% endfor %}
+                    <td>
+                        <select name="messaging">
+                                    <option selected disabled value="">Messaging</option>
+                                    <option name="On">On</option>
+                                    <option name="Off">Off</option>
+                                </select>
+                    </td>
+
+                </tr>
+            </table>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

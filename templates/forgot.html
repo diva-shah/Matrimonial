@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Forgot Password
+{% endblock %}
+
+{% block main %}
+    <form action="/forgot" method="post">
+        <div class="form-group">
+            <input autocomplete="off" required autocomplete = "off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class = "form-group">
+            <input class="form-control" required autocomplete = "off" name = "newPassword" placeholder = "New Password" type = "password">
+        </div>
+        <div class = "form-group">
+            <input class="form-control" required autocomplete = "off" name = "confirmNewPassword" placeholder = "(Re-type) New Password" type = "password">
+        </div>
+        <h3>{{ question }} (Must be the answer you gave when you registered on this website)?</h3>
+        <div class = "form-group">
+            <input class="form-control" required autocomplete = "off" name = "answer" placeholder = "Answer to your question (must be exactly the same)" type = "password">
+        </div>
+        <button class="btn btn-primary" type="submit">Change Password</button>
+    </form>
+{% endblock %}

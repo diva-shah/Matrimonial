@@ -1,0 +1,100 @@
+{% extends "shared/editlayout.html" %} {% block title %} Edit Partner Preference {% endblock %} {% block edit %}
+
+
+<div class="col-9">
+    <div class="container-fluid">
+        <h1>Edit your Preferences</h1>
+        <form action="/edittingpreferences" method="post">
+            <h2>Preferences</h2>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Age</span>
+                </div>
+                <input type="number" class="form-control" name="ageFrom" value="{{preference[0]['age'][0]}}{{preference[0]['age'][1]}}" placeholder="From" autofocus min="18" max="80">
+                <input type="number" class="form-control" name="ageTo" value="{{preference[0]['age'][5]}}{{preference[0]['age'][6]}}" placeholder="To" min="18" max="80">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Height</span></span>
+                </div>
+                <select name="heightFrom" class="form-control">
+                            <option value="" selected disabled>From</option>
+                            <option value = "60">5' 0" (1.52m)</option>
+                            <option value = "61">5' 1" (1.55m)</option>
+                            <option value = "62">5' 2" (1.57m)</option>
+                            <option value = "63">5' 3" (1.60m)</option>
+                            <option value = "64">5' 4" (1.63m)</option>
+                            <option value = "65">5' 5" (1.65m)</option>
+                            <option value = "66">5' 6" (1.68m)</option>
+                            <option value = "67">5' 7" (1.70m)</option>
+                            <option value = "68">5' 8" (1.73m)</option>
+                            <option value = "69">5' 9" (1.75m)</option>
+                            <option value = "70">5' 10" (1.78m)</option>
+                            <option value = "71">5' 11" (1.80m)</option>
+                            <option value = "72">6' 0" (1.83m)</option>
+                            <option value = "73">6' 1" (1.85m)</option>
+                            <option value = "74">6' 2" (1.88m)</option>
+                            <option value = "75">6' 3" (1.91m)</option>
+                            <option value = "76">6' 4" (1.93m)</option>
+                            <option value = "77">6' 5" (1.96m)</option>
+                            <option value = "78">6' 6" (1.98m)</option>
+                            <option value = "79">6' 7" (2.01m)</option>
+                            <option value = "80">6' 8" (2.03m)</option>
+                            <option value = "81">6' 9" (2.06m)</option>
+                            <option value = "82">6' 10" (2.08m)</option>
+                            <option value = "83">6' 11" (2.11m)</option>
+                    </select>
+                <select name="heightTo" class="form-control">
+                            <option value="" selected disabled>To</option>
+                            <option value = "60">5' 0" (1.52m)</option>
+                            <option value = "61">5' 1" (1.55m)</option>
+                            <option value = "62">5' 2" (1.57m)</option>
+                            <option value = "63">5' 3" (1.60m)</option>
+                            <option value = "64">5' 4" (1.63m)</option>
+                            <option value = "65">5' 5" (1.65m)</option>
+                            <option value = "66">5' 6" (1.68m)</option>
+                            <option value = "67">5' 7" (1.70m)</option>
+                            <option value = "68">5' 8" (1.73m)</option>
+                            <option value = "69">5' 9" (1.75m)</option>
+                            <option value = "70">5' 10" (1.78m)</option>
+                            <option value = "71">5' 11" (1.80m)</option>
+                            <option value = "72">6' 0" (1.83m)</option>
+                            <option value = "73">6' 1" (1.85m)</option>
+                            <option value = "74">6' 2" (1.88m)</option>
+                            <option value = "75">6' 3" (1.91m)</option>
+                            <option value = "76">6' 4" (1.93m)</option>
+                            <option value = "77">6' 5" (1.96m)</option>
+                            <option value = "78">6' 6" (1.98m)</option>
+                            <option value = "79">6' 7" (2.01m)</option>
+                            <option value = "80">6' 8" (2.03m)</option>
+                            <option value = "81">6' 9" (2.06m)</option>
+                            <option value = "82">6' 10" (2.08m)</option>
+                            <option value = "83">6' 11" (2.11m)</option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <h5>Education</h5>
+                <input class="form-control" type="text" name="education" value="{{preference[0]['education']}}" placeholder="Education" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <h5>Marriage</h5>
+                <input class="form-control" type="text" name="marriage" value="{{preference[0]['maritalStatus']}}" placeholder="Marital Status" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <h5>Annual Income</h5>
+                <input class="form-control" type="text" name="income" value="{{preference[0]['income']}}" placeholder="Income" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <h5>Country</h5>
+                <input class="form-control" type="text" name="country" value="{{preference[0]['country']}}" placeholder="Country" autocomplete="off">
+            </div>
+            <button class="btn btn-primary" type="submit">Update</button>
+
+        </form>
+    </div>
+
+    {% endblock %}

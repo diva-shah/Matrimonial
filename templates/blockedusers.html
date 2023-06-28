@@ -1,0 +1,40 @@
+{% extends "shared/editlayout.html" %} {% block title %} Blocked Users {% endblock %} {% block edit %}
+
+        <div class="col-9">
+            <div class="container-fluid">
+                <h1>Blocked Users</h1>
+                <div class = "row pro">
+                    {% if length == 0 %}
+                        <h5 style="text-indent: 5px;">No one blocked at this time.</h5>
+                {% endif %} {% for x in range(length) %} {% if information[x][0]['gender'] == 'M' %}
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="profile-list profile-grid">
+                        <div class="profile-list-image">
+                            <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar2.png">
+                        </div>
+                        <h5 align="center">{{info[x]['whoGotBlocked']}}</h5>
+                        <a href="{{ url_for('unblockedpreferences', username = information[x][0]['username']) }}" style="color: red">
+                            <h5>UNBLOCK</h5>
+                        </a>
+                    </div>
+                </div>
+                {% elif information[x][0]['gender'] == 'F' %}
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="profile-list profile-grid">
+                        <div class="profile-list-image">
+                            <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar3.png">
+                        </div>
+                        <h5 align="center">{{info[x]['whoGotBlocked']}}</h5>
+                        <a href="{{ url_for('unblockedpreferences', username = information[x][0]['username']) }}" style="color: red">
+                            <h5>UNBLOCK</h5>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+
+
+{% endblock %}
+
+

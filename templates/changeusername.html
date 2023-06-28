@@ -1,0 +1,25 @@
+{% extends "shared/editlayout.html" %} {% block title %} Change Username {% endblock %} {% block edit %}
+
+
+<div class="col-9">
+    <div class="container-fluid">
+    <h1>Change Username</h1>
+    <form action = "/editusername" method = "post">
+        <div class="form-group">
+            <input class="form-control" name="username" type="text" value = "{{users[0]['username']}}" placeholder="Username" autocomplete = "off">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" type="password" placeholder="Password" autocomplete = "off">
+        </div>
+                <div class="form-group" align="center">
+                    <button class="btn btn-primary" type="submit">Update</button>
+                </div>
+
+    </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
+

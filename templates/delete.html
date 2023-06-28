@@ -1,0 +1,37 @@
+{% extends "shared/editlayout.html" %} {% block title %} Delete Profile {% endblock %} {% block edit %}
+
+
+        <div class="col-9">
+<div class="container-fluid">
+    <h1>Delete profile</h1>
+    <form action = "/deleteprofile" method = "post">
+            <h4 align="left">Reason for leaving</h4>
+            {% for x in reasons %}
+                <div align = "left">
+                    <input type = "checkbox" name="{{x}}" value = "{{x}}" id = "{{x}}">
+                    <label for="{{x}}">{{x}}</label>
+                </div>
+            {% endfor %}
+            <br>
+            <table>
+                <tr>
+                    <textarea class="form-control" name="comments" autofocus placeholder="Comments or Suggestions"></textarea>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <input class="form-control" name="password" required type = "password" placeholder="Password">
+                </tr>
+            </table>
+            <br>
+            <div class="form-group" align="left">
+                    <button class="btn btn-primary" type="submit">Delete</button>
+            </div>
+
+    </form>
+</div>
+
+
+
+{% endblock %}
