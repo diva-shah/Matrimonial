@@ -160,3 +160,4 @@ The initial flask setup, session configuration and login was borrowed from the f
 W3SCHOOLS also helped with the implementation of this website.
 
 During the course I received lots of help from the Discord chat of cs50 and all of my submissions of the credits given to what was not mine; I would encourage you to look at those credits to make sure nothing is wrong.
+
